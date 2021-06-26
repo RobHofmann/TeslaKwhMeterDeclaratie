@@ -29,4 +29,4 @@ WORKDIR /app
 COPY --from=build /app/out ./
 
 # Define the Entrypoint
-ENTRYPOINT ["TeslaKwhMeter"]
+ENTRYPOINT ["/entrypoint.sh"]
