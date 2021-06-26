@@ -7,8 +7,8 @@ RUN dotnet restore TeslaKwhMeter.csproj
 COPY src/TeslaKwhMeter/ .
 RUN dotnet publish -c Release -o out
 
-FROM mcr.microsoft.com/dotnet/runtime:5.0 AS runtime
+FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS runtime
 WORKDIR /app
 COPY --from=build /app/out ./
 
-ENTRYPOINT ["dotnet", "TeslaKwhMeter.dll"]
+ENTRYPOINT ["TeslaKwhMeter"]
