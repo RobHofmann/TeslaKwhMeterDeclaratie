@@ -26,10 +26,10 @@ namespace TeslaKwhMeter
     {
         public static async Task Main(string[] args)
         {
-            var configurationBuilder = new ConfigurationBuilder();
-            configurationBuilder.AddJsonFile("appsettings.json", false);
-            configurationBuilder.AddEnvironmentVariables();
-            var configuration = configurationBuilder.Build();
+            var configuration = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json", true)
+                .AddEnvironmentVariables()
+                .Build();
 
             var services = new ServiceCollection();
             services.AddSingleton<ILogger, ConsoleLogger>();
