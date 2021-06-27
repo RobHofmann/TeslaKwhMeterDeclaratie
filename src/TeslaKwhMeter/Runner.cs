@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -52,6 +53,8 @@ namespace TeslaKwhMeter
             {
                 _logger.Log("Hello World! Welcome to the Tesla kWh Collector");
                 _logger.Log("COLLECT ALL THE THINGS!!!!");
+                _logger.Log($"Connecting to SQL Host: {_kwhStandContext.Database.GetDbConnection().DataSource}");
+                _logger.Log($"Connecting to SQL Database: {_kwhStandContext.Database.GetDbConnection().Database}");
 
                 DateTime currentDate = DateTime.Now;
 
