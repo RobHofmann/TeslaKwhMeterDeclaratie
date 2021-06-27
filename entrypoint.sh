@@ -5,6 +5,7 @@ if [[ -n "$CRON_EXPRESSION" ]]; then
   ln -sf /proc/$$/fd/1 /var/log/stdout
   service cron start
 	if [[ -n "$CRON_EXPRESSION" ]]; then
+        env >> /etc/environment
         echo "$CRON_EXPRESSION /app/TeslaKwhMeter >/var/log/stdout 2>&1" > /etc/crontab
 	fi
 	crontab /etc/crontab
