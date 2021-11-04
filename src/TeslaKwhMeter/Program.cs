@@ -34,7 +34,7 @@ namespace TeslaKwhMeter
             var services = new ServiceCollection();
             services.AddSingleton<ILogger, ConsoleLogger>();
             services.AddSingleton<ITeslaKwhMeterService, TeslaKwhMeterService>();
-            services.AddSingleton<IMailer, DefaultSmtpMailer>();
+            services.AddSingleton<IMailer, SendGridMailer>();
             services.AddSingleton<Runner>();
             services.AddSingleton<IConfiguration>(configuration);
 
