@@ -13,7 +13,7 @@ De tool leest een sensor uit Prometheus (informatie wordt gescraped uit HomeAssi
 | Smtp__Host | `smtp.gmail.com` | SMTP Hostname |
 | Smtp__Port | `597` | SMTP Port |
 | Smtp__Username | `mijnemail@provider.nl` | SMTP Username |
-| Smtp__Password | `mijnsmtppassword` | SMTP Password |
+| Smtp__Password | `mijnsmtppassword` | SMTP Password or SendGrid API Key |
 | Smtp__To | `ontvager@provider.nl` | SMTP To Adres |
 | Smtp__From | `mijnemail@provider.nl` | SMTP From Adres |
 | Energie__KwHPrijsInEuros | `0.22` | De energieprijs in euros |
