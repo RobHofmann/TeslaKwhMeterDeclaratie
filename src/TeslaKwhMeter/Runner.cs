@@ -72,7 +72,7 @@ namespace TeslaKwhMeter
                 // Email met te declareren informatie.
                 var mailBody = $"Onkostenvergoeding elektrisch thuisladen. {laatsteKwhStand.Datum.ToString("dd-MM-yyyy")} tot {currentDate.ToString("dd-MM-yyyy")}. Begin: {laatsteKwhStand.StandInKwh} kWh. Eind: {huidigeKwhStand} kWh. Delta: {verschilInKwh} kWh.<br /><br />Te Declareren: €{teDeclarerenBedrag}.";
                 _logger.Log($"Mail versturen: {mailBody}");
-                _mailer.SendMail(_smtpConfiguration.Host, _smtpConfiguration.Port, _smtpConfiguration.Username, _smtpConfiguration.Password
+                await _mailer.SendMail(_smtpConfiguration.Host, _smtpConfiguration.Port, _smtpConfiguration.Username, _smtpConfiguration.Password
                     , _smtpConfiguration.To, _smtpConfiguration.From, "Nieuwe Tesla Energie Declaratie", mailBody, true);
                 _logger.Log($"Mail verstuurd!");
 
